@@ -1,0 +1,150 @@
+# Workflow API version
+apiVersion: io.orquestra.workflow/1.0.0
+
+# Prefix for workflow ID
+name: tutorial-1
+
+# List resources needed by workflow.
+imports:
+- name: sklearn-resource
+  type: git
+  parameters:
+    repository: "git@github.com:zapatacomputing/z-scikit-learn.git"
+    branch: "workflow-v1"
+
+steps:
+
+# This step trains a perceptron model on the simple_dataset
+- name: perceptron-simple
+  config:
+    runtime:
+      type: python3
+      imports: [sklearn-resource]
+      parameters:
+        file: sklearn-resource/tasks/tutorial_1_task.py
+        function: generate_train_predict
+    resources:
+      cpu: "1000m"
+      memory: "1Gi"
+      disk: "15Gi"
+  inputs:
+    - dataset_name: "simple_dataset"
+      type: string
+    - model_name: "perceptron"
+      type: string
+  outputs:
+  - name: result
+    type: message
+
+# This step trains a decision tree model on the simple_dataset
+- name: decisiontree-simple
+  config:
+    runtime:
+      type: python3
+      imports: [sklearn-resource]
+      parameters:
+        file: sklearn-resource/tasks/tutorial_1_task.py
+        function: generate_train_predict
+    resources:
+      cpu: "1000m"
+      memory: "1Gi"
+      disk: "15Gi"
+  inputs:
+    - dataset_name: "simple_dataset"
+      type: string
+    - model_name: "decisiontree"
+      type: string
+  outputs:
+  - name: result
+    type: message
+
+# This step trains a support vector machine model on the simple_dataset
+- name: svm-simple
+  config:
+    runtime:
+      type: python3
+      imports: [sklearn-resource]
+      parameters:
+        file: sklearn-resource/tasks/tutorial_1_task.py
+        function: generate_train_predict
+    resources:
+      cpu: "1000m"
+      memory: "1Gi"
+      disk: "15Gi"
+  inputs:
+    - dataset_name: "simple_dataset"
+      type: string
+    - model_name: "svm"
+      type: string
+  outputs:
+  - name: result
+    type: message
+
+# This step trains a perceptron model on the square_dataset
+- name: perceptron-square
+  config:
+    runtime:
+      type: python3
+      imports: [sklearn-resource]
+      parameters:
+        file: sklearn-resource/tasks/tutorial_1_task.py
+        function: generate_train_predict
+    resources:
+      cpu: "1000m"
+      memory: "1Gi"
+      disk: "15Gi"
+  inputs:
+    - dataset_name: "square_dataset"
+      type: string
+    - model_name: "perceptron"
+      type: string
+  outputs:
+  - name: result
+    type: message
+
+# This step trains a decision tree model on the square_dataset
+- name: decisiontree-square
+  config:
+    runtime:
+      type: python3
+      imports: [sklearn-resource]
+      parameters:
+        file: sklearn-resource/tasks/tutorial_1_task.py
+        function: generate_train_predict
+    resources:
+      cpu: "1000m"
+      memory: "1Gi"
+      disk: "15Gi"
+  inputs:
+    - dataset_name: "square_dataset"
+      type: string
+    - model_name: "decisiontree"
+      type: string
+  outputs:
+  - name: result
+    type: message
+
+# This step trains a support vector machine model on the square_dataset
+- name: svm-square
+  config:
+    runtime:
+      type: python3
+      imports: [sklearn-resource]
+      parameters:
+        file: sklearn-resource/tasks/tutorial_1_task.py
+        function: generate_train_predict
+    resources:
+      cpu: "1000m"
+      memory: "1Gi"
+      disk: "15Gi"
+  inputs:
+    - dataset_name: "square_dataset"
+      type: string
+    - model_name: "svm"
+      type: string
+  outputs:
+  - name: result
+    type: message
+
+types:
+ - message

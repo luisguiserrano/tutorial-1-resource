@@ -1,0 +1,40 @@
+# Workflow API version
+apiVersion: io.orquestra.workflow/1.0.0
+
+# Prefix for workflow ID
+name: tutorial-1
+
+# List resources needed by workflow.
+imports:
+- name: sklearn-resource
+  type: git
+  parameters:
+    repository: "git@github.com:zapatacomputing/z-scikit-learn.git"
+    branch: "workflow-v1"
+
+steps:
+
+# This step runs the task that trains the model from the z-scikit-learn resource
+- name: perceptron-training
+  config:
+    runtime:
+      type: python3
+      imports: [sklearn-resource]
+      parameters:
+        file: sklearn-resource/tasks/tutorial_1_task.py
+        function: generate_train_predict
+    resources:
+      cpu: "1000m"
+      memory: "1Gi"
+      disk: "15Gi"
+  inputs:
+    - dataset_name: "simple_dataset"
+      type: string
+    - model_name: "perceptron"
+      type: string
+  outputs:
+  - name: result
+    type: message
+
+types:
+ - message
