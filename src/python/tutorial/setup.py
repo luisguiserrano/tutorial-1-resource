@@ -13,7 +13,7 @@ setuptools.setup(
     description                     = "Training models with scikit-learn in orquestra.",
     long_description                = long_description,
     long_description_content_type   = "text/markdown",
-    url                             = "https://github.com/zapatacomputing/z-scikit-learn",
+    url                             = "https://github.com/luisguiserrano/tutorial-1-resource",
     packages                        = setuptools.find_packages(where = "python"),
     package_dir                     = {"" : "python"},
     classifiers                     = (
