@@ -1,4 +1,3 @@
-import os
 import setuptools
 
 setuptools.setup(
@@ -14,6 +13,7 @@ setuptools.setup(
     install_requires = [
         "pandas",
         "sklearn",
-        "numpy"
+        "numpy",
+        "z-scikit-learn"
    ],
 )
