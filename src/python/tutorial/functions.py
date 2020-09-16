@@ -4,6 +4,7 @@ import sklearn
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
+from sklearn.metrics import accuracy_score
 
 def generate_dataset(dataset_name = "simple_dataset"):
     if dataset_name == "simple_dataset":
