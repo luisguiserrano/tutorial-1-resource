@@ -2,11 +2,11 @@
 apiVersion: io.orquestra.workflow/1.0.0
 
 # Prefix for workflow ID
-name: tutorial-1
+name: tutorial-2
 
 # List resources needed by workflow.
 imports:
-- name: sklearn-resource
+- name: tutorial-resource
   type: git
   parameters:
     repository: "git@github.com:luisguiserrano/tutorial-1-resource.git"
@@ -19,9 +19,9 @@ steps:
   config:
     runtime:
       type: python3
-      imports: [sklearn-resource]
+      imports: [tutorial-resource]
       parameters:
-        file: sklearn-resource/tasks/tutorial_1_task.py
+        file: tutorial-resource/tasks/tutorial_2_task.py
         function: generate_train_predict
     resources:
       cpu: "1000m"

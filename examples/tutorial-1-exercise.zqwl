@@ -21,7 +21,7 @@ steps:
       type: python3
       imports: [sklearn-resource]
       parameters:
-        file: sklearn-resource/tasks/tutorial_1_task.py
+        file: sklearn-resource/tasks/tutorial_2_task.py
         function: generate_train_predict
     resources:
       cpu: "1000m"
@@ -43,7 +43,7 @@ steps:
       type: python3
       imports: [sklearn-resource]
       parameters:
-        file: sklearn-resource/tasks/tutorial_1_task.py
+        file: sklearn-resource/tasks/tutorial_2_task.py
         function: generate_train_predict
     resources:
       cpu: "1000m"
@@ -65,7 +65,7 @@ steps:
       type: python3
       imports: [sklearn-resource]
       parameters:
-        file: sklearn-resource/tasks/tutorial_1_task.py
+        file: sklearn-resource/tasks/tutorial_2_task.py
         function: generate_train_predict
     resources:
       cpu: "1000m"
@@ -87,7 +87,7 @@ steps:
       type: python3
       imports: [sklearn-resource]
       parameters:
-        file: sklearn-resource/tasks/tutorial_1_task.py
+        file: sklearn-resource/tasks/tutorial_2_task.py
         function: generate_train_predict
     resources:
       cpu: "1000m"
@@ -109,7 +109,7 @@ steps:
       type: python3
       imports: [sklearn-resource]
       parameters:
-        file: sklearn-resource/tasks/tutorial_1_task.py
+        file: sklearn-resource/tasks/tutorial_2_task.py
         function: generate_train_predict
     resources:
       cpu: "1000m"
@@ -131,7 +131,7 @@ steps:
       type: python3
       imports: [sklearn-resource]
       parameters:
-        file: sklearn-resource/tasks/tutorial_1_task.py
+        file: sklearn-resource/tasks/tutorial_2_task.py
         function: generate_train_predict
     resources:
       cpu: "1000m"
