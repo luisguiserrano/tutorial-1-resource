@@ -2,7 +2,7 @@ from tutorial.functions import generate_dataset
 from tutorial.functions import preprocess_data
 from tutorial.functions import train_model
 from tutorial.functions import make_predictions
-from tutorial.functions import score_model
+from tutorial.functions import calculate_accuracy
 from tutorial.utils import save_json
 
 def generate_train_predict(dataset_name, model_name):
