@@ -14,6 +14,5 @@ setuptools.setup(
         "pandas",
         "sklearn",
         "numpy",
-        "z-scikit-learn"
    ],
 )
